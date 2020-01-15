@@ -1,4 +1,4 @@
-package br.com.balena.calculadora_imc;
+package br.com.ciolfi.calculadora_imc;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
