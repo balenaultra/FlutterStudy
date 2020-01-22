@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       providers: [
         Provider<Controller>(
           create: (_) => Controller(),
+          dispose: (_, controller) => controller.dispose(),
         )
       ],
       child: MaterialApp(
