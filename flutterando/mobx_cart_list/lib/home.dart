@@ -34,9 +34,32 @@ class _HomePageState extends State<HomePage> {
             Observer(
               builder: (_) {
                 return _textField(
-                  labelText: "Nome",
+                  labelText: "Name",
                   onChanged: controller.client.changeName,
                   errorText: controller.validateName,
+                );
+              },
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Observer(
+              builder: (_) {
+                return _textField(
+                  labelText: "E-Mail",
+                  onChanged: controller.client.changeEmail,
+                  errorText: controller.validateEmail,
+                );
+              },
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Observer(
+              builder: (_) {
+                return RaisedButton(
+                  onPressed: controller.isValid ? () {} : null,
+                  child: Text("Salvar"),
                 );
               },
             ),
