@@ -19,6 +19,7 @@ environment:
 dependencies:
   mobx:
   flutter_mobx:
+  provider:
   flutter:
     sdk: flutter
 
