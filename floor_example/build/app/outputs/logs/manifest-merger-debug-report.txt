@@ -1,0 +1,157 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:1:1-39:12
+INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:1:1-39:12
+INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:1:1-39:12
+INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:1:1-39:12
+MERGED from [:sqflite] /Users/ivoneibalena/flutterstudy/floor/example/build/sqflite/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/88a727dc45cc6ce6f7f8b737dda3a177/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/9c86d9ee737d3848180de8bcc89aa2fb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/131a709cc50a5c93ced4f8d69811dd65/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/945f2644857679f4069788bc3455a66f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/c34e2aaa2fba44e9538b2d8e48e0c088/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/09e3b10dc320638451c974f6bd365583/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/c16bbba961e54d7a445a5b4fa6f9b279/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/3c0ac08fd4258b3492095dd30d89f13a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/1a27ae6daf01b88f88ccc156b75dc700/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/2b6a4c162151bfb456d3976f1381fbcb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/60bfb944516ea5f6cecf59db1d2297fb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/5f0566ef745e269d4b4ecd1d0d131c6b/AndroidManifest.xml:17:1-24:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/35452908dd18ea934608070e49585d73/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/54070c9848af79d56734a9660647ae27/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/546df52ae74cddbe3a68f357f6429e88/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/74c7eda6a362694416a872232900d859/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/7ef1746436b09e82fbe1d1cdd3aea7b3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/d550065eb90e2604608429f7c6a2fd63/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/66530d142d801b5646cdc09e4c5c0f65/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/92dbb9a2b1dc09c2c2fbc6b58dca82a8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/d33f3a2867786bdad0f6c7d70d89b449/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/416a63ec60b875e597417cf620743582/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/d2f34b3e2e18da4ae0dfb78dde9b0607/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:1:1-39:12
+INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:1:1-39:12
+INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:1:1-39:12
+	package
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:2:5-31
+		INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:1:1-39:12
+		INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:1:1-39:12
+		INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:8:5-66
+	android:name
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:8:22-64
+application
+ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:15:5-38:19
+MERGED from [com.android.support:support-compat:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/5f0566ef745e269d4b4ecd1d0d131c6b/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/5f0566ef745e269d4b4ecd1d0d131c6b/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/d550065eb90e2604608429f7c6a2fd63/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/d550065eb90e2604608429f7c6a2fd63/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/5f0566ef745e269d4b4ecd1d0d131c6b/AndroidManifest.xml:22:18-91
+	android:label
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:17:9-32
+	android:icon
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:18:9-43
+	android:name
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:16:9-57
+activity#io.vitus.example.MainActivity
+ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:19:9-37:20
+	android:launchMode
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:21:13-43
+	android:hardwareAccelerated
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:24:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:25:13-55
+	android:configChanges
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:23:13-137
+	android:theme
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:22:13-47
+	android:name
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:20:13-41
+meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
+ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:30:13-32:40
+	android:value
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:32:17-37
+	android:name
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:31:17-82
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:33:13-36:29
+action#android.intent.action.MAIN
+ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:34:17-68
+	android:name
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:34:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:35:17-76
+	android:name
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml:35:27-74
+uses-sdk
+INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+MERGED from [:sqflite] /Users/ivoneibalena/flutterstudy/floor/example/build/sqflite/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] /Users/ivoneibalena/flutterstudy/floor/example/build/sqflite/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/88a727dc45cc6ce6f7f8b737dda3a177/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/88a727dc45cc6ce6f7f8b737dda3a177/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/9c86d9ee737d3848180de8bcc89aa2fb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/9c86d9ee737d3848180de8bcc89aa2fb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/131a709cc50a5c93ced4f8d69811dd65/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/131a709cc50a5c93ced4f8d69811dd65/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/945f2644857679f4069788bc3455a66f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/945f2644857679f4069788bc3455a66f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/c34e2aaa2fba44e9538b2d8e48e0c088/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/c34e2aaa2fba44e9538b2d8e48e0c088/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/09e3b10dc320638451c974f6bd365583/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/09e3b10dc320638451c974f6bd365583/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/c16bbba961e54d7a445a5b4fa6f9b279/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/c16bbba961e54d7a445a5b4fa6f9b279/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/3c0ac08fd4258b3492095dd30d89f13a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/3c0ac08fd4258b3492095dd30d89f13a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/1a27ae6daf01b88f88ccc156b75dc700/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/1a27ae6daf01b88f88ccc156b75dc700/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/2b6a4c162151bfb456d3976f1381fbcb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/2b6a4c162151bfb456d3976f1381fbcb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/60bfb944516ea5f6cecf59db1d2297fb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/60bfb944516ea5f6cecf59db1d2297fb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/5f0566ef745e269d4b4ecd1d0d131c6b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/5f0566ef745e269d4b4ecd1d0d131c6b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/35452908dd18ea934608070e49585d73/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/35452908dd18ea934608070e49585d73/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/54070c9848af79d56734a9660647ae27/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/54070c9848af79d56734a9660647ae27/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/546df52ae74cddbe3a68f357f6429e88/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/546df52ae74cddbe3a68f357f6429e88/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/74c7eda6a362694416a872232900d859/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/74c7eda6a362694416a872232900d859/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/7ef1746436b09e82fbe1d1cdd3aea7b3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/7ef1746436b09e82fbe1d1cdd3aea7b3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/d550065eb90e2604608429f7c6a2fd63/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/d550065eb90e2604608429f7c6a2fd63/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/66530d142d801b5646cdc09e4c5c0f65/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/66530d142d801b5646cdc09e4c5c0f65/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/92dbb9a2b1dc09c2c2fbc6b58dca82a8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/92dbb9a2b1dc09c2c2fbc6b58dca82a8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/d33f3a2867786bdad0f6c7d70d89b449/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/d33f3a2867786bdad0f6c7d70d89b449/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/416a63ec60b875e597417cf620743582/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/416a63ec60b875e597417cf620743582/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/d2f34b3e2e18da4ae0dfb78dde9b0607/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/ivoneibalena/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/d2f34b3e2e18da4ae0dfb78dde9b0607/AndroidManifest.xml:20:5-44
+INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ivoneibalena/flutterstudy/floor/example/android/app/src/main/AndroidManifest.xml
