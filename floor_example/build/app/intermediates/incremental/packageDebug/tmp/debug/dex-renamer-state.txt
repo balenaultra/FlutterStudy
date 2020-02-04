@@ -1,4 +1,0 @@
-#Thu Jan 30 22:45:47 BRST 2020
-base.0=/Users/ivoneibalena/flutterstudy/floor/example/build/app/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex

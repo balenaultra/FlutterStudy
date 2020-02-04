@@ -165,9 +165,9 @@ packages:
   floor:
     dependency: "direct main"
     description:
-      path: "../floor"
-      relative: true
-    source: path
+      name: floor
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.11.0"
   floor_annotation:
     dependency: transitive
@@ -179,9 +179,9 @@ packages:
   floor_generator:
     dependency: "direct dev"
     description:
-      path: "../floor_generator"
-      relative: true
-    source: path
+      name: floor_generator
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.11.0"
   flutter:
     dependency: "direct main"
