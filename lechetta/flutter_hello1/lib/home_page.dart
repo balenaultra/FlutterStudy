@@ -1,5 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hello1/pages/hello_listview.dart';
+import 'package:flutter_hello1/pages/hello_page1.dart';
+import 'package:flutter_hello1/pages/hello_page2.dart';
+import 'package:flutter_hello1/pages/hello_page3.dart';
+import 'package:flutter_hello1/utils/nav.dart';
+import 'package:flutter_hello1/widgets/blue_button.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -8,55 +13,83 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Hello Flutter"),
       ),
-      body: _body(),
+      body: _body(context),
     );
   }
 
-  _body() {
+  _body(BuildContext context) {
     return Container(
-      width: double.infinity,
       color: Colors.white,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          _text(),
-          _img(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _button(),
-              _button(),
-              _button(),
-            ],
-          ),
-        ],
+      width: double.infinity,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _text(),
+            _pageView(),
+            _buttons(context),
+          ],
+        ),
       ),
     );
   }
 
-  _img() {
+  _pageView() {
+    return Container(
+        margin: EdgeInsets.only(top: 20, bottom: 20),
+        height: 300,
+        child: PageView(
+          children: [
+            _img("assets/images/dog1.png"),
+            _img("assets/images/dog2.png"),
+            _img("assets/images/dog3.png"),
+            _img("assets/images/dog4.png"),
+            _img("assets/images/dog5.png"),
+          ],
+        ));
+  }
+
+  _img(String text) {
     return Image.asset(
-      "assets/images/dog1.png",
+      text,
       fit: BoxFit.contain,
     );
   }
 
-  _button() {
-    return RaisedButton(
-      color: Colors.red,
-      child: Text(
-        "OK",
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 20,
+  _buttons(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            BlueButton("ListView",
+                onPressed: () => _onClickNavigator(context, HelloListView())),
+            BlueButton("Page2",
+                onPressed: () => _onClickNavigator(context, HelloPage2())),
+            BlueButton("Page3",
+                onPressed: () => _onClickNavigator(context, HelloPage3())),
+          ],
         ),
-      ),
-      onPressed: _onClickOk,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            BlueButton("Snack", onPressed: () => _onClickSnack),
+            BlueButton("Dialog", onPressed: () => _onClickDialog),
+            BlueButton("Toast", onPressed: () => _onClickToast),
+          ],
+        ),
+      ],
     );
   }
 
-  _onClickOk() {
-    print("Clicou no botão OK!");
+  _onClickToast() {}
+  _onClickDialog() {}
+  _onClickSnack() {}
+
+  _onClickNavigator(BuildContext context, Widget page) async {
+    String s = await push(context, page);
+
+    print(">> $s");
   }
 
   _text() {
