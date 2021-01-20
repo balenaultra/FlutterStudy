@@ -18,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   final _tLogin = TextEditingController();
   final _tSenha = TextEditingController();
   final _focusSenha = FocusNode();
+  bool _showProgress = false;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +63,8 @@ class _LoginPageState extends State<LoginPage> {
             ),
             AppButton(
               "Login",
-              _onClickLogin,
+              onPressed: _onClickLogin,
+              showProgress: _showProgress,
             ),
           ],
         ),
@@ -80,6 +82,10 @@ class _LoginPageState extends State<LoginPage> {
 
     print("login $login Senha $senha");
 
+    setState(() {
+      _showProgress = true;
+    });
+
     ApiResponse response = await LoginApi.login(login, senha);
 
     if (response.ok) {
@@ -92,6 +98,9 @@ class _LoginPageState extends State<LoginPage> {
       alert(context, response.msg);
     }
 
+    setState(() {
+      _showProgress = false;
+    });
   }
 
   String _validateLogin(String text) {
