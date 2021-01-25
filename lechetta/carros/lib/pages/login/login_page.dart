@@ -1,8 +1,8 @@
 import 'package:carros/api_response.dart';
-import 'package:carros/pages/home_page.dart';
-import 'package:carros/usuario.dart';
+import 'package:carros/pages/carro/home_page.dart';
+import 'package:carros/pages/login/usuario.dart';
 import 'package:carros/utils/alert.dart';
-import 'package:carros/utils/login_api.dart';
+import 'package:carros/pages/login/login_api.dart';
 import 'package:carros/utils/nav.dart';
 import 'package:carros/widgets/app_button.dart';
 import 'package:carros/widgets/app_text.dart';
