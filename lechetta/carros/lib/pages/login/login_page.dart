@@ -21,6 +21,22 @@ class _LoginPageState extends State<LoginPage> {
   bool _showProgress = false;
 
   @override
+  void initState() {
+    super.initState();
+
+    Future<Usuario> future = Usuario.get();
+    future.then((user) {
+      if (user != null) {
+        push(context, HomePage(), replace: true);
+
+        /*setState(() {
+          _tLogin.text = user.login;
+        });*/
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -31,8 +47,6 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   _body() {
-    _tLogin.text = 'admin';
-    _tSenha.text = '123';
     return Form(
       key: _formKey,
       child: Container(
@@ -93,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
     if (response.ok) {
       Usuario user = response.result;
 
-      print(">>> $user");
+      //print(">>> $user");
 
       push(context, HomePage(), replace: true);
     } else {
