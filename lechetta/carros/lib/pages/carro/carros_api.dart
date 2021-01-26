@@ -1,15 +1,24 @@
+import 'dart:convert' as convert;
+
 import 'package:carros/pages/carro/carro.dart';
+import 'package:http/http.dart' as http;
+
+class TipoCarro {
+  static final String classicos = "classicos";
+  static final String esportivos = "esportivos";
+  static final String luxo = "luxo";
+}
 
 class CarrosApi {
-  static Future<List<Carro>> getCarros() async {
-    final carros = List<Carro>();
+  static Future<List<Carro>> getCarros(String tipo) async {
+    var url = 'https://carros-springboot.herokuapp.com/api/v1/carros/tipo/$tipo';
 
-    await Future.delayed(Duration(seconds: 2));
+    var response = await http.get(url);
 
-    carros.add(Carro(nome: 'Lamborghini2 Reventon 2', urlFoto: 'https://s3-sa-east-1.amazonaws.com/videos.livetouchdev.com.br/luxo/Lamborghini_Reventon.png'));
-    carros.add(Carro(nome: 'Opala 788', urlFoto: 'https://storage.googleapis.com/carros-flutterweb.appspot.com/image_picker8358122735247866734.jpg'));
-    carros.add(Carro(nome: 'MacKenn', urlFoto: 'https://storage.googleapis.com/carros-flutterweb.appspot.com/Mcqueen-3.png'));
+    String json = response.body;
 
-    return carros;
+    List list = convert.json.decode(json);
+
+    return list.map<Carro>((map) => Carro.fromJson(map)).toList();
   }
 }

@@ -31,6 +31,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   _body() {
+    _tLogin.text = 'admin';
+    _tSenha.text = '123';
     return Form(
       key: _formKey,
       child: Container(
