@@ -9,54 +9,13 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'carro_page.dart';
 
-class CarrosListView extends StatefulWidget {
-  String tipo;
+class CarrosListView extends StatelessWidget {
+  List<Carro> carros;
 
-  CarrosListView(this.tipo);
-
-  @override
-  _CarrosListViewState createState() => _CarrosListViewState();
-}
-
-class _CarrosListViewState extends State<CarrosListView>
-    with AutomaticKeepAliveClientMixin<CarrosListView> {
-
-  final _model = CarrosModel();
-
-  String get tipo => widget.tipo;
-
-  @override
-  bool get wantKeepAlive => true;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _model.fetch(tipo);
-  }
+  CarrosListView(this.carros);
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
-
-    return Observer(
-      builder: (_) {
-        List<Carro> carros = _model.carros;
-
-        if (_model.error != null) {
-          return TextError("Não foi possível buscar os carros");
-        }
-        if (carros == null) {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-        return _listView(carros);
-      },
-    );
-  }
-
-  Container _listView(List<Carro> carros) {
     return Container(
       padding: EdgeInsets.all(16),
       child: ListView.builder(
@@ -96,7 +55,7 @@ class _CarrosListViewState extends State<CarrosListView>
                       children: <Widget>[
                         FlatButton(
                           child: const Text('DETALHES'),
-                          onPressed: () => _onClickCarro(c),
+                          onPressed: () => _onClickCarro(context, c),
                         ),
                         FlatButton(
                           child: const Text('SHARE'),
@@ -116,7 +75,7 @@ class _CarrosListViewState extends State<CarrosListView>
     );
   }
 
-  _onClickCarro(Carro carro) {
+  _onClickCarro(BuildContext context, Carro carro) {
     push(context, CarroPage(carro));
   }
 }

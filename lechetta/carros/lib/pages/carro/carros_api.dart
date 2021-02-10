@@ -24,6 +24,8 @@ class CarrosApi {
 
       var response = await http.get(url, headers: headers);
 
+      print("GET >> $url");
+
       String json = response.body;
 
       List list = convert.json.decode(json);

@@ -8,6 +8,8 @@ part 'loripsum_model.g.dart';
 class LoripsumModel = LoripsumModelBase with _$LoripsumModel;
 
 abstract class LoripsumModelBase with Store {
+  static String lorim;
+
   @observable
   String loripsum;
 
@@ -18,7 +20,9 @@ abstract class LoripsumModelBase with Store {
   fetch() async {
     try {
 
-      this.loripsum = await LoripsumApi.getLoripsum();
+      this.loripsum = lorim ?? await LoripsumApi.getLoripsum();
+
+      lorim = this.loripsum;
 
     } catch (e) {
       error = e;

@@ -16,11 +16,12 @@ abstract class CarrosModelBase with Store {
   Exception error;
 
   @action
-  fetch(String tipo) async {
+  Future<List<Carro>> fetch(String tipo) async {
     try {
 
       this.carros = await CarrosApi.getCarros(tipo);
 
+      return carros;
     } catch (e) {
       error = e;
     }
