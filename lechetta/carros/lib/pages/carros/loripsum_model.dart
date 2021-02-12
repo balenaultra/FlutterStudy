@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:carros/pages/carro/loripsum.dart';
+import 'package:carros/pages/carros/loripsum.dart';
 import 'package:mobx/mobx.dart';
 
 part 'loripsum_model.g.dart';

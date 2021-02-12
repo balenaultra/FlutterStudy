@@ -1,6 +1,7 @@
 import 'dart:convert' as convert;
 
-import 'package:carros/pages/carro/carro.dart';
+import 'package:carros/pages/carros/carro.dart';
+import 'package:carros/pages/favoritos/carro_dao.dart';
 import 'package:carros/pages/login/usuario.dart';
 import 'package:http/http.dart' as http;
 
@@ -30,7 +31,16 @@ class CarrosApi {
 
       List list = convert.json.decode(json);
 
-      return list.map<Carro>((map) => Carro.fromJson(map)).toList();
+      List<Carro> carros = list.map<Carro>((map) => Carro.fromJson(map)).toList();
+
+      final dao = CarroDAO();
+      //for (Carro c in carros) {
+      //  dao.save(c);
+      //}
+      carros.forEach(dao.save);
+
+      return carros;
+
     } catch (error, exception) {
       print("$error > $exception");
       throw error;
