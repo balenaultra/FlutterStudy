@@ -1,7 +1,7 @@
 import 'dart:convert' as convert;
 
 import 'package:carros/pages/carros/carro.dart';
-import 'package:carros/pages/favoritos/carro_dao.dart';
+import 'package:carros/pages/carros/carro_dao.dart';
 import 'package:carros/pages/login/usuario.dart';
 import 'package:http/http.dart' as http;
 
@@ -32,12 +32,6 @@ class CarrosApi {
       List list = convert.json.decode(json);
 
       List<Carro> carros = list.map<Carro>((map) => Carro.fromMap(map)).toList();
-
-      final dao = CarroDAO();
-      //for (Carro c in carros) {
-      //  dao.save(c);
-      //}
-      carros.forEach(dao.save);
 
       return carros;
 

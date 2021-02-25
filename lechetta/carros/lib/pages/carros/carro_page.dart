@@ -1,5 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carros/pages/carros/carro.dart';
 import 'package:carros/pages/carros/loripsum_model.dart';
+import 'package:carros/pages/favoritos/favorito.dart';
+import 'package:carros/pages/favoritos/favorito_model.dart';
+import 'package:carros/pages/favoritos/favorito_service.dart';
 import 'package:carros/widgets/text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -14,12 +18,17 @@ class CarroPage extends StatefulWidget {
 }
 
 class _CarroPageState extends State<CarroPage> {
-  final _model = LoripsumModel();
+  final _modelLoripsum = LoripsumModel();
+  final _modelFavorito = FavoritoModel();
+
+  Carro get carro => widget.carro;
 
   @override
   void initState() {
     super.initState();
-    _model.fetch();
+
+    _modelLoripsum.fetch();
+    _modelFavorito.fetch(carro);
   }
 
   @override
@@ -43,6 +52,7 @@ class _CarroPageState extends State<CarroPage> {
                 PopupMenuItem(
                   value: "Editar",
                   child: Text("Editar"),
+
                 ),
                 PopupMenuItem(
                   value: "Deletar",
@@ -66,7 +76,9 @@ class _CarroPageState extends State<CarroPage> {
       padding: EdgeInsets.all(16),
       child: ListView(
         children: [
-          Image.network(widget.carro.urlFoto),
+          CachedNetworkImage(
+            imageUrl: widget.carro.urlFoto,
+          ),
           _bloco1(),
           Divider(),
           _bloco2(),
@@ -88,12 +100,29 @@ class _CarroPageState extends State<CarroPage> {
         ),
         Row(
           children: [
-            IconButton(
-              icon: Icon(Icons.favorite, color: Colors.red, size: 40),
-              onPressed: _onClickFavorito,
+            Observer(
+              builder: (_) {
+                Favorito favorito = _modelFavorito.favorito;
+
+                print("Carro >> $carro");
+                print("Favorito >> $favorito");
+                //_modelFavorito.fetch(carro);
+
+                return IconButton(
+                  icon: Icon(
+                    Icons.favorite,
+                    color: favorito == null ? Colors.grey : Colors.red,
+                    size: 40,
+                  ),
+                  onPressed: _onClickFavorito,
+                );
+              },
             ),
             IconButton(
-              icon: Icon(Icons.share),
+              icon: Icon(
+                Icons.share,
+                size: 40,
+              ),
               onPressed: _onClickShare,
             ),
           ],
@@ -109,11 +138,13 @@ class _CarroPageState extends State<CarroPage> {
         text(widget.carro.descricao, bold: true),
         SizedBox(height: 20),
         Observer(
-        builder: (_) {
-            String loripsum = _model.loripsum;
+          builder: (_) {
+            String loripsum = _modelLoripsum.loripsum;
 
             if (loripsum == null) {
-              return Center(child: CircularProgressIndicator(),);
+              return Center(
+                child: CircularProgressIndicator(),
+              );
             }
             return text(loripsum);
           },
@@ -140,7 +171,10 @@ class _CarroPageState extends State<CarroPage> {
 
   void _onClickVideo() {}
 
-  void _onClickFavorito() {}
+  void _onClickFavorito() async {
+    bool favorito = await FavoritoService.favoritar(carro);
+    _modelFavorito.fetch(carro);
+  }
 
   void _onClickShare() {}
 }
