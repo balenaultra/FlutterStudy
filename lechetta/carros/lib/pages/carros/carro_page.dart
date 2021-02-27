@@ -1,10 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carros/api_response.dart';
 import 'package:carros/pages/carros/carro.dart';
 import 'package:carros/pages/carros/carro_form_page.dart';
+import 'package:carros/pages/carros/carros_api.dart';
 import 'package:carros/pages/carros/loripsum_model.dart';
 import 'package:carros/pages/favoritos/favorito.dart';
 import 'package:carros/pages/favoritos/favorito_model.dart';
 import 'package:carros/pages/favoritos/favorito_service.dart';
+import 'package:carros/utils/alert.dart';
 import 'package:carros/utils/nav.dart';
 import 'package:carros/widgets/text.dart';
 import 'package:flutter/material.dart';
@@ -164,9 +167,10 @@ class _CarroPageState extends State<CarroPage> {
             carro: carro,
           ),
         );
+        //TODO Atualizar os dados do carro na pagina depois de atualizar no servidor
         break;
       case "Deletar":
-        print("Deletar");
+        deletar();
         break;
       case "Share":
         print("Share");
@@ -184,4 +188,16 @@ class _CarroPageState extends State<CarroPage> {
   }
 
   void _onClickShare() {}
+
+  void deletar() async {
+    ApiResponse<bool> response = await CarrosApi.delete(carro);
+
+    if (response.ok) {
+      alert(context, "Carro deletado com sucesso", callback: (){
+        pop(context);
+      });
+    } else {
+      alert(context, response.msg ?? "ERRO");
+    }
+  }
 }

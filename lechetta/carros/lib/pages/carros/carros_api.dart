@@ -2,7 +2,7 @@ import 'dart:convert' as convert;
 import 'package:carros/api_response.dart';
 import 'package:carros/pages/carros/carro.dart';
 import 'package:carros/pages/login/usuario.dart';
-import 'package:http/http.dart' as http;
+import 'package:carros/utils/http_helper.dart' as http;
 
 class TipoCarro {
   static final String classicos = "classicos";
@@ -13,17 +13,11 @@ class TipoCarro {
 class CarrosApi {
   static Future<List<Carro>> getCarros(String tipo) async {
     try {
-      Usuario user = await Usuario.get();
-
-      Map<String, String> headers = {
-        "Content-Type": "Application/json",
-        "Authorization": "Bearer ${user.token}",
-      };
 
       var url =
           'https://carros-springboot.herokuapp.com/api/v2/carros/tipo/$tipo';
 
-      var response = await http.get(url, headers: headers);
+      var response = await http.get(url);
 
       print("GET >> $url");
 
@@ -43,13 +37,6 @@ class CarrosApi {
 
   static Future<ApiResponse<bool>> save(Carro c) async {
     try {
-      Usuario user = await Usuario.get();
-
-      Map<String, String> headers = {
-        "Content-Type": "Application/json",
-        "Authorization": "Bearer ${user.token}",
-      };
-
       var url = 'https://carros-springboot.herokuapp.com/api/v2/carros';
       if (c.id != null) {
         url += "/${c.id}";
@@ -59,12 +46,9 @@ class CarrosApi {
 
       String json = c.toJson();
 
-      print("Body: ${json}");
-      print("Headers: ${headers}");
-
       var response = await (c.id == null
-          ? http.post(url, body: json, headers: headers)
-          : http.put(url, body: json, headers: headers));
+          ? http.post(url, body: json)
+          : http.put(url, body: json));
 
       print("Response status: ${response.statusCode}");
       print("Response body: ${response.body}");
@@ -89,6 +73,37 @@ class CarrosApi {
     } catch (e) {
       print(e);
       return ApiResponse.error("Não foi possível salvar o carro");
+    }
+  }
+
+  static Future<ApiResponse<bool>> delete(Carro carro) async {
+    try {
+
+      var url = 'https://carros-springboot.herokuapp.com/api/v2/carros/${carro.id}';
+
+      print("URL > $url");
+
+      var response = await http.delete(url);
+
+      print("Response status: ${response.statusCode}");
+      print("Response body: ${response.body}");
+
+      if (response.statusCode == 200) {
+
+        print("Carro removido: ${carro.id}");
+
+        return ApiResponse.ok(true);
+      }
+
+      if (response.body == null || response.body.isEmpty) {
+        return ApiResponse.error("Não foi possível remover o carro");      }
+
+      Map mapResponse = convert.json.decode(response.body);
+      return ApiResponse.error(
+          mapResponse["error"] ?? "Não foi possível remover o carro");
+    } catch (e) {
+      print(e);
+      return ApiResponse.error("Não foi possível remover o carro");
     }
   }
 }
