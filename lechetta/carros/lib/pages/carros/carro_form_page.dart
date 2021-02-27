@@ -1,5 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carros/api_response.dart';
 import 'package:carros/pages/carros/carro.dart';
+import 'package:carros/pages/carros/carros_api.dart';
+import 'package:carros/utils/alert.dart';
+import 'package:carros/utils/nav.dart';
+import 'package:carros/widgets/app_button.dart';
+import 'package:carros/widgets/app_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -85,56 +91,34 @@ class _CarroFormPageState extends State<CarroFormPage> {
           ),
           _radioTipo(),
           Divider(),
-          TextFormField(
+          AppText(
+            "Nome",
+            "",
             controller: tNome,
-            keyboardType: TextInputType.text,
             validator: _validateNome,
-            style: TextStyle(color: Colors.blue, fontSize: 20),
-            decoration: new InputDecoration(
-              hintText: '',
-              labelText: 'Nome',
-            ),
-          ),
-          TextFormField(
-            controller: tDesc,
             keyboardType: TextInputType.text,
-            style: TextStyle(
-              color: Colors.blue,
-              fontSize: 20,
-            ),
-            decoration: new InputDecoration(
-              hintText: '',
-              labelText: 'Descrição',
-            ),
           ),
-          Container(
-            height: 50,
-            margin: new EdgeInsets.only(top: 20.0),
-            child: RaisedButton(
-              color: Colors.blue,
-              child: _showProgress
-                  ? CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                    )
-                  : Text(
-                      "Salvar",
-                      style: new TextStyle(
-                        color: Colors.white,
-                        fontSize: 22,
-                      ),
-                    ),
-              onPressed: _onClickSalvar,
-            ),
-          )
+          AppText(
+            "Descrição",
+            "",
+            controller: tDesc,
+            validator: _validateNome,
+            keyboardType: TextInputType.text,
+          ),
+          AppButton(
+            "Salvar",
+            onPressed: _onClickSalvar,
+            showProgress: _showProgress,
+          ),
         ],
       ),
     );
   }
 
   _headerFoto() {
-    return carro != null
+    return ((carro != null) && (carro.urlFoto != null))
         ? CachedNetworkImage(
-            imageUrl: carro.urlFoto,
+            imageUrl: carro.urlFoto
           )
         : Image.asset(
             "assets/images/camera.png",
@@ -224,12 +208,18 @@ class _CarroFormPageState extends State<CarroFormPage> {
 
     print("Salvar o carro $c");
 
-    await Future.delayed(Duration(seconds: 3));
+    ApiResponse<bool> response = await CarrosApi.save(c);
+
+    if (response.ok) {
+      alert(context, "Carro salvo com sucesso", callback: (){
+        pop(context);
+      });
+    } else {
+      alert(context, response.msg ?? "ERRO");
+    }
 
     setState(() {
       _showProgress = false;
     });
-
-    print("Fim.");
   }
 }

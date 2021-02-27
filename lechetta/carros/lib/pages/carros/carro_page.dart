@@ -1,9 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carros/pages/carros/carro.dart';
+import 'package:carros/pages/carros/carro_form_page.dart';
 import 'package:carros/pages/carros/loripsum_model.dart';
 import 'package:carros/pages/favoritos/favorito.dart';
 import 'package:carros/pages/favoritos/favorito_model.dart';
 import 'package:carros/pages/favoritos/favorito_service.dart';
+import 'package:carros/utils/nav.dart';
 import 'package:carros/widgets/text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -35,7 +37,7 @@ class _CarroPageState extends State<CarroPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.carro.nome),
+        title: Text(carro.nome),
         actions: [
           IconButton(
             icon: Icon(Icons.place),
@@ -52,7 +54,6 @@ class _CarroPageState extends State<CarroPage> {
                 PopupMenuItem(
                   value: "Editar",
                   child: Text("Editar"),
-
                 ),
                 PopupMenuItem(
                   value: "Deletar",
@@ -77,7 +78,8 @@ class _CarroPageState extends State<CarroPage> {
       child: ListView(
         children: [
           CachedNetworkImage(
-            imageUrl: widget.carro.urlFoto,
+            imageUrl: carro.urlFoto ??
+                "https://cdn5.vectorstock.com/i/1000x1000/64/29/generic-brown-sedan-car-isolated-on-white-vector-13216429.jpg",
           ),
           _bloco1(),
           Divider(),
@@ -94,8 +96,8 @@ class _CarroPageState extends State<CarroPage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            text(widget.carro.nome, fontSize: 20, bold: true),
-            text(widget.carro.tipo, fontSize: 16),
+            text(carro.nome, fontSize: 20, bold: true),
+            text(carro.tipo, fontSize: 16),
           ],
         ),
         Row(
@@ -135,7 +137,7 @@ class _CarroPageState extends State<CarroPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        text(widget.carro.descricao, bold: true),
+        text(carro.descricao, bold: true),
         SizedBox(height: 20),
         Observer(
           builder: (_) {
@@ -156,7 +158,12 @@ class _CarroPageState extends State<CarroPage> {
   _onClickPopUpMenu(String value) {
     switch (value) {
       case "Editar":
-        print("Editar");
+        push(
+          context,
+          CarroFormPage(
+            carro: carro,
+          ),
+        );
         break;
       case "Deletar":
         print("Deletar");
