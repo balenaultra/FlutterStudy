@@ -17,8 +17,7 @@ abstract class FavoritosModelBase with Store {
   Exception error;
 
   @action
-  Future<List<Carro>> fetch() async {
-
+  fetch() async {
     try {
       this.carros = await FavoritoService.getCarros();
       return carros;

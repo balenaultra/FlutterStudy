@@ -22,8 +22,6 @@ abstract class FavoritoModelBase with Store {
     try {
       this.favorito = await FavoritoDAO().findById(carro.id);
 
-      print("FETCH >> ${this.favorito}");
-
       return this.favorito;
 
     } catch (e) {

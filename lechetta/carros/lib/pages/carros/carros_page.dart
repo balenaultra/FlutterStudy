@@ -7,10 +7,8 @@ import 'package:carros/widgets/text_error.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import 'carro_page.dart';
-
 class CarrosPage extends StatefulWidget {
-  String tipo;
+  final String tipo;
 
   CarrosPage(this.tipo);
 

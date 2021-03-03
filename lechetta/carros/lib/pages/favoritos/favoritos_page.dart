@@ -2,11 +2,12 @@ import 'dart:async';
 
 import 'package:carros/pages/carros/carro.dart';
 import 'package:carros/pages/carros/carros_listview.dart';
-import 'package:carros/pages/carros/carros_model.dart';
 import 'package:carros/pages/favoritos/favoritos_model.dart';
 import 'package:carros/widgets/text_error.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:provider/provider.dart';
+
 
 class FavoritosPage extends StatefulWidget {
 
@@ -16,7 +17,6 @@ class FavoritosPage extends StatefulWidget {
 
 class _FavoritosPageState extends State<FavoritosPage>
     with AutomaticKeepAliveClientMixin<FavoritosPage> {
-  final _model = FavoritosModel();
 
   @override
   bool get wantKeepAlive => true;
@@ -25,7 +25,7 @@ class _FavoritosPageState extends State<FavoritosPage>
   void initState() {
     super.initState();
 
-    _model.fetch();
+    context.read<FavoritosModel>().fetch();
   }
 
   @override
@@ -34,9 +34,9 @@ class _FavoritosPageState extends State<FavoritosPage>
 
     return Observer(
       builder: (_) {
-        List<Carro> carros = _model.carros;
+        List<Carro> carros = context.read<FavoritosModel>().carros;
 
-        if (_model.error != null) {
+        if (context.read<FavoritosModel>().error != null) {
           return TextError("Não foi possível buscar os favoritos");
         }
         if (carros == null) {
@@ -53,6 +53,6 @@ class _FavoritosPageState extends State<FavoritosPage>
   }
 
   Future<void> _onRefresh() {
-    return _model.fetch();
+    return context.read<FavoritosModel>().fetch();
   }
 }

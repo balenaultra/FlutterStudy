@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:carros/pages/api_response.dart';
 import 'package:carros/pages/carros/carro.dart';
 import 'package:carros/pages/carros/upload_service.dart';
-import 'package:carros/pages/login/usuario.dart';
 import 'package:carros/utils/http_helper.dart' as http;
 
 class TipoCarro {

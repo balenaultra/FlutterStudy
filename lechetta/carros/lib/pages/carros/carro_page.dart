@@ -7,14 +7,16 @@ import 'package:carros/pages/carros/loripsum_model.dart';
 import 'package:carros/pages/favoritos/favorito.dart';
 import 'package:carros/pages/favoritos/favorito_model.dart';
 import 'package:carros/pages/favoritos/favorito_service.dart';
+import 'package:carros/pages/favoritos/favoritos_model.dart';
 import 'package:carros/utils/alert.dart';
 import 'package:carros/utils/nav.dart';
 import 'package:carros/widgets/text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:provider/provider.dart';
 
 class CarroPage extends StatefulWidget {
-  Carro carro;
+  final Carro carro;
 
   CarroPage(this.carro);
 
@@ -183,8 +185,10 @@ class _CarroPageState extends State<CarroPage> {
   void _onClickVideo() {}
 
   void _onClickFavorito() async {
-    bool favorito = await FavoritoService.favoritar(carro);
+    await FavoritoService.favoritar(carro);
     _modelFavorito.fetch(carro);
+
+    context.read<FavoritosModel>().fetch();
   }
 
   void _onClickShare() {}

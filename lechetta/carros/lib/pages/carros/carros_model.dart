@@ -19,7 +19,7 @@ abstract class CarrosModelBase with Store {
   Exception error;
 
   @action
-  Future<List<Carro>> fetch(String tipo) async {
+  fetch(String tipo) async {
 
     bool networkOn = await isNetworkOn();
     print(networkOn);
