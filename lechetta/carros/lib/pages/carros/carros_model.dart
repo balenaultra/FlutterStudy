@@ -22,7 +22,6 @@ abstract class CarrosModelBase with Store {
   fetch(String tipo) async {
 
     bool networkOn = await isNetworkOn();
-    print(networkOn);
 
     try {
       if (!networkOn) {

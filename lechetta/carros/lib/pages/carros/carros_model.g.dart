@@ -42,7 +42,7 @@ mixin _$CarrosModel on CarrosModelBase, Store {
   final _$fetchAsyncAction = AsyncAction('CarrosModelBase.fetch');
 
   @override
-  Future<List<Carro>> fetch(String tipo) {
+  Future fetch(String tipo) {
     return _$fetchAsyncAction.run(() => super.fetch(tipo));
   }
 

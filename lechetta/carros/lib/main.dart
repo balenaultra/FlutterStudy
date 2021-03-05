@@ -1,5 +1,6 @@
 import 'package:carros/pages/favoritos/favoritos_model.dart';
 import 'package:carros/splash_page.dart';
+import 'package:carros/utils/event_bus.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -12,6 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        Provider<EventBus>(
+          create: (_) => EventBus(),
+          dispose: (_, bus) => bus.dispose(),
+        ),
         Provider<FavoritosModel>(
           create: (_) => FavoritosModel(),
         )

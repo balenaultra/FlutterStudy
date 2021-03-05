@@ -9,6 +9,7 @@ import 'package:carros/pages/favoritos/favorito_model.dart';
 import 'package:carros/pages/favoritos/favorito_service.dart';
 import 'package:carros/pages/favoritos/favoritos_model.dart';
 import 'package:carros/utils/alert.dart';
+import 'package:carros/utils/event_bus.dart';
 import 'package:carros/utils/nav.dart';
 import 'package:carros/widgets/text.dart';
 import 'package:flutter/material.dart';
@@ -111,8 +112,6 @@ class _CarroPageState extends State<CarroPage> {
               builder: (_) {
                 Favorito favorito = _modelFavorito.favorito;
 
-                print("Carro >> $carro");
-                print("Favorito >> $favorito");
                 //_modelFavorito.fetch(carro);
 
                 return IconButton(
@@ -198,6 +197,7 @@ class _CarroPageState extends State<CarroPage> {
 
     if (response.ok) {
       alert(context, "Carro deletado com sucesso", callback: (){
+        EventBus.get(context).sendEvent(CarroEvent("carro_deletado", carro.tipo));
         pop(context);
       });
     } else {

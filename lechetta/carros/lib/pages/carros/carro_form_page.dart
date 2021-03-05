@@ -5,6 +5,7 @@ import 'package:carros/pages/api_response.dart';
 import 'package:carros/pages/carros/carro.dart';
 import 'package:carros/pages/carros/carros_api.dart';
 import 'package:carros/utils/alert.dart';
+import 'package:carros/utils/event_bus.dart';
 import 'package:carros/utils/nav.dart';
 import 'package:carros/widgets/app_button.dart';
 import 'package:carros/widgets/app_text.dart';
@@ -223,18 +224,15 @@ class _CarroFormPageState extends State<CarroFormPage> {
     c.descricao = tDesc.text;
     c.tipo = _getTipo();
 
-    print("Carro: $c");
-
     setState(() {
       _showProgress = true;
     });
-
-    print("Salvar o carro $c");
 
     ApiResponse<bool> response = await CarrosApi.save(c, _file);
 
     if (response.ok) {
       alert(context, "Carro salvo com sucesso", callback: () {
+        EventBus.get(context).sendEvent(CarroEvent("carro_salvo", c.tipo));
         pop(context);
 
       });

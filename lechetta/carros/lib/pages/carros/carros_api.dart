@@ -60,15 +60,10 @@ class CarrosApi {
           ? http.post(url, body: json)
           : http.put(url, body: json));
 
-      print("Response status: ${response.statusCode}");
-      print("Response body: ${response.body}");
-
       if (response.statusCode == 201 || response.statusCode == 200) {
         Map mapResponse = convert.json.decode(response.body);
 
         c = Carro.fromMap(mapResponse);
-
-        print("Novo carro: ${c.id}");
 
         return ApiResponse.ok(true);
       }

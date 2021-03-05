@@ -42,7 +42,7 @@ mixin _$FavoritosModel on FavoritosModelBase, Store {
   final _$fetchAsyncAction = AsyncAction('FavoritosModelBase.fetch');
 
   @override
-  Future<List<Carro>> fetch() {
+  Future fetch() {
     return _$fetchAsyncAction.run(() => super.fetch());
   }
 
