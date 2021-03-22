@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class LoripsumApi {
 
   static Future<String> getLoripsum() async {
-    var url = 'https://loripsum.net/api';
+    var url = Uri.parse('https://loripsum.net/api');
 
     var response = await http.get(url);
 

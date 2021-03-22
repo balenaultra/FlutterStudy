@@ -8,6 +8,7 @@ import 'package:carros/pages/favoritos/favorito.dart';
 import 'package:carros/pages/favoritos/favorito_model.dart';
 import 'package:carros/pages/favoritos/favorito_service.dart';
 import 'package:carros/pages/favoritos/favoritos_model.dart';
+import 'package:carros/pages/video_page.dart';
 import 'package:carros/utils/alert.dart';
 import 'package:carros/utils/event_bus.dart';
 import 'package:carros/utils/nav.dart';
@@ -51,7 +52,9 @@ class _CarroPageState extends State<CarroPage> {
           ),
           IconButton(
             icon: Icon(Icons.videocam),
-            onPressed: _onClickVideo,
+            onPressed: () {
+              _onClickVideo(context);
+            },
           ),
           PopupMenuButton<String>(
             onSelected: (String value) => _onClickPopUpMenu(value),
@@ -181,7 +184,14 @@ class _CarroPageState extends State<CarroPage> {
 
   void _onClickMapa() {}
 
-  void _onClickVideo() {}
+  void _onClickVideo(BuildContext context) {
+    if (carro.urlVideo != null && carro.urlVideo.isNotEmpty) {
+      //launch(carro.urlVideo);
+      push(context, VideoPage(carro));
+    } else {
+      alert(context, "Este carro não possui nenhum vídeo");
+    }
+  }
 
   void _onClickFavorito() async {
     await FavoritoService.favoritar(carro);
@@ -196,8 +206,9 @@ class _CarroPageState extends State<CarroPage> {
     ApiResponse<bool> response = await CarrosApi.delete(carro);
 
     if (response.ok) {
-      alert(context, "Carro deletado com sucesso", callback: (){
-        EventBus.get(context).sendEvent(CarroEvent("carro_deletado", carro.tipo));
+      alert(context, "Carro deletado com sucesso", callback: () {
+        EventBus.get(context)
+            .sendEvent(CarroEvent("carro_deletado", carro.tipo));
         pop(context);
       });
     } else {

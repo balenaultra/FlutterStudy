@@ -30,7 +30,7 @@ class UploadApi {
 
       final response = await http
           .post(
-          url,
+          Uri.parse(url),
           body: json
       )
           .timeout(

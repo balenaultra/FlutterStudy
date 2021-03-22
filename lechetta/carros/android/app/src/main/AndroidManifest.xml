@@ -9,6 +9,11 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="carros"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCh4wdNNg0dPH3-NKKRaRB435_FAFS0y7E"/>
+
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -44,4 +49,5 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

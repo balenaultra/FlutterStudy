@@ -16,18 +16,18 @@ class CarrosApi {
     try {
 
       var url =
-          'https://carros-springboot.herokuapp.com/api/v2/carros/tipo/$tipo';
+          Uri.parse('https://carros-springboot.herokuapp.com/api/v2/carros/tipo/$tipo');
 
       var response = await http.get(url);
 
       print("GET >> $url");
 
       String json = response.body;
+      //print("json >> $json");
 
       List list = convert.json.decode(json);
 
-      List<Carro> carros =
-      list.map<Carro>((map) => Carro.fromMap(map)).toList();
+      List<Carro> carros = list.map<Carro>((map) => Carro.fromMap(map)).toList();
 
       return carros;
     } catch (error, exception) {
@@ -57,8 +57,8 @@ class CarrosApi {
       String json = c.toJson();
 
       var response = await (c.id == null
-          ? http.post(url, body: json)
-          : http.put(url, body: json));
+          ? http.post(Uri.parse(url), body: json)
+          : http.put(Uri.parse(url), body: json));
 
       if (response.statusCode == 201 || response.statusCode == 200) {
         Map mapResponse = convert.json.decode(response.body);
@@ -84,7 +84,7 @@ class CarrosApi {
   static Future<ApiResponse<bool>> delete(Carro carro) async {
     try {
 
-      var url = 'https://carros-springboot.herokuapp.com/api/v2/carros/${carro.id}';
+      var url = Uri.parse('https://carros-springboot.herokuapp.com/api/v2/carros/${carro.id}');
 
       print("URL > $url");
 
