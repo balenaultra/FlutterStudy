@@ -8,6 +8,7 @@ import 'package:carros/pages/favoritos/favorito.dart';
 import 'package:carros/pages/favoritos/favorito_model.dart';
 import 'package:carros/pages/favoritos/favorito_service.dart';
 import 'package:carros/pages/favoritos/favoritos_model.dart';
+import 'package:carros/pages/mapa_page.dart';
 import 'package:carros/pages/video_page.dart';
 import 'package:carros/utils/alert.dart';
 import 'package:carros/utils/event_bus.dart';
@@ -48,7 +49,9 @@ class _CarroPageState extends State<CarroPage> {
         actions: [
           IconButton(
             icon: Icon(Icons.place),
-            onPressed: _onClickMapa,
+            onPressed: () {
+              _onClickMapa(context);
+            }
           ),
           IconButton(
             icon: Icon(Icons.videocam),
@@ -182,7 +185,13 @@ class _CarroPageState extends State<CarroPage> {
     }
   }
 
-  void _onClickMapa() {}
+  void _onClickMapa(BuildContext context) {
+    if (carro.latitude != null && carro.longitude != null) {
+      push(context, MapaPage(carro));
+    } else {
+      alert(context, "Este carro não possui latitude e longitude cadastrados");
+    }
+  }
 
   void _onClickVideo(BuildContext context) {
     if (carro.urlVideo != null && carro.urlVideo.isNotEmpty) {
