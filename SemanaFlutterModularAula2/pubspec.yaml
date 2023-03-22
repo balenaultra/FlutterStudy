@@ -22,7 +22,7 @@ dependencies:
   flutter_modular:
   mobx:
   flutter_mobx:
-  dio:
+  dio: any
 
 dev_dependencies:
   flutter_test:
